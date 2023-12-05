@@ -1,0 +1,137 @@
+﻿
+@{
+    ViewBag.Title = "homepage";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+<head>
+    <style>
+
+        #image {
+            width: 800px; /* Set your desired width in pixels */
+            height: 450px; /* Set your desired height in pixels */
+        }
+
+        .button-container {
+            display: flex;
+            justify-content: flex-end;
+        }
+
+        .custom-button {
+            background-color:yellowgreen;
+            color: white;
+            font-size: 16px;
+            padding: 10px 20px;
+            margin-left: 10px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+            .custom-button:hover {
+                background-color: #0056b3;
+            }
+    </style>
+
+</head>
+
+<body style="background-color:white;">
+
+    <div class="button-container">
+        <a href="@Url.Action("Login", "homepage")" class="custom-button">Login</a>
+
+    </div>
+
+    <h1 style="color: green; font-size: 45px; text-align: center; font-weight: bold;">
+        WELCOME TO TRANSIT FARMING
+    </h1>
+
+
+    <h4 style="color: lightskyblue; font-size: 30px; text-align: center; font-weight: bold;">
+        "Your Convenient Destination for High-Quality Farm Products and Exceptional Services"
+    </h4>
+
+    <img src="~/Content/Style/PICTURES/download.jpeg" style="width: 1250px; height: 450px;" />
+
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <h1 style="color:yellowgreen; font-size: 45px; text-align: center; font-weight: bold;">
+        ABOUT US
+    </h1>
+    <div style="text-align: center;">
+        <p>Polar Farming, nestled in the heart of KwaZulu Natal, is a small farm owned by Mr. and Mrs. Mkhize. </p>
+        <p> We take pride in delivering the freshest crops and healthiest livestock to our cherished customers.</p>
+        <p> Our journey began in 2017, and since then, we've been growing alongside our crops and livestock, fostering a legacy of quality and care. </p>
+        <p> At Polar Farming, we believe in offering the best without breaking the bank. Our products are priced for your satisfaction, ensuring you'll never regret choosing us.</p>
+        <p> We serve our customers through two convenient channels: in-store, where you can experience the farm's charm in person, and online, right from the comfort of your home, through our user-friendly website "TRANSIT FARMING".</p>
+        <p> Discover the bounty of Polar Farming and savor the goodness of our fresh crops and healthy livestock. Join us on this wholesome journey – where quality meets affordability.</p>
+        <h4> Polar Farming - Where Quality Meets Freshness, Rooted in Tradition, Growing for Tomorrow. </h4>
+    </div>
+
+    <br />
+    <br />
+    <br />
+    <br />
+    <br />
+
+
+    <div style="background-color:lightgoldenrodyellow">
+        <h2 style="font-size: 40px; text-align: center; ">
+            OUR PRODUCTS
+        </h2>
+
+        <p style="text-align: center; color: yellowgreen; font-size: 30px; font-weight: bold; font-style: italic;">
+            "We provide our customers with high-quality, healthy livestock and fresh, top-notch crops."
+        </p>
+
+        <div style="text-align: center; display: flex; justify-content: space-between; align-items: center;">
+            <div style="flex: 1; text-align: center;">
+                <img src="" id="image1" style="width: 500px; height: 300px;" />
+                <h1>Crops</h1>
+            </div>
+            <div style="flex: 1; text-align: center;">
+                <img src="" id="image2" style="width: 500px; height: 300px;" />
+                <h1>Livestock</h1>
+            </div>
+        </div>
+
+        <script type="text/javascript">
+    let image1 = document.getElementById("image1");
+    let image2 = document.getElementById("image2");
+    let imagesCrops = [
+        "@Url.Content("~/Content/Style/PICTURES/image1.jpg")",
+        "@Url.Content("~/Content/Style/PICTURES/how-to-grow-spinach.jpg")"
+    ];
+    let imagesLivestock = [
+        "@Url.Content("~/Content/Style/PICTURES/image2.jpeg")",
+        "@Url.Content("~/Content/Style/PICTURES/v.jpeg")",
+         "@Url.Content("~/Content/Style/PICTURES/liv.jpeg")",
+        "@Url.Content("~/Content/Style/PICTURES/sheep.jpg")"
+    ];
+
+    function changeImage() {
+        let rnd1 = Math.floor(Math.random() * imagesCrops.length);
+        let rnd2 = Math.floor(Math.random() * imagesLivestock.length);
+        image1.src = imagesCrops[rnd1];
+        image2.src = imagesLivestock[rnd2];
+    }
+
+    changeImage(); // Change images initially
+    setInterval(changeImage, 1500);
+        </script>
+
+        <<div style="font-size: 30px; font-weight: bold; text-align: center;">
+    <a href="@Url.Action("Login", "homepage")" style="text-decoration: none;">SEE MORE>>></a>
+</div>
+
+    </div>
+
+</body>
+
+}

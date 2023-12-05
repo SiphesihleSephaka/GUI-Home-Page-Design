@@ -1,0 +1,75 @@
+﻿
+@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <head>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center content horizontally */
+                justify-content: center; /* Center content vertically */
+                height: 100vh; /* Make sure the body fills the viewport height */
+                margin: 0;
+            }
+
+            .page-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .image-container {
+                display: flex;
+                justify-content: center; /* Center content horizontally */
+                align-items: center; /* Center content vertically */
+            }
+
+                .image-container > div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center; /* Center items horizontally within each div */
+                }
+
+                .image-container img {
+                    width: 250px;
+                    height: 250px;
+                    border: 2px solid #333;
+                    border-radius: 10px;
+                    margin: 50px;
+                }
+
+                .image-container p {
+                    text-align: center;
+                }
+        </style>
+    </head>
+    <body>
+        <div class="page-title" ; style="background-color: lightgoldenrodyellow; text-align: center;">
+            <h1>LOGIN AS</h1>
+        </div>
+
+        <div class="image-container">
+            <div>
+                <img src="~/Content/Style/PICTURES/consumer.png" />
+                <p>Customer</p>
+            </div>
+
+            <div>
+                <a href="@Url.Action("homepage", "homepage")" style="text-decoration: none;"><img src="~/Content/Style/PICTURES/admin.jpg" /></a>
+
+                <p>Admin</p>
+            </div>
+
+            <div>
+                <img src="~/Content/Style/PICTURES/driver.jpg" />
+                <p>Driver</p>
+            </div>
+        </div>
+    </body>
+
+}

@@ -1,0 +1,67 @@
+﻿@{
+    ViewBag.Title = "Login";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <head>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center content horizontally */
+                justify-content: center; /* Center content vertically */
+                height: 100vh; /* Make sure the body fills the viewport height */
+                margin: 0;
+            }
+
+            .page-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+                background-color: yellowgreen;
+                text-align: center;
+            }
+
+            .image-container {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center content horizontally */
+            }
+
+            .row {
+                display: flex;
+                flex-direction: row;
+                justify-content: center; /* Center content horizontally within each row */
+            }
+
+            .image {
+                width: 300px;
+                height: 250px;
+                border: 2px solid #333;
+                border-radius: 10px;
+                margin: 10px;
+            }
+        </style>
+    </head>
+
+    <body style="background-color:lightgreen">
+        <div class="page-title">
+            <h1>SELECT TYPE OF LIVESTOCK</h1>
+        </div>
+
+        <div class="image-container">
+            <div class="row">
+                <img src="~/Content/Style/Cow_female.jpg" class="image" />
+                <img src="~/Content/Style/sheep.jpg" class="image" />
+                <img src="~/Content/Style/chieken.jpg" class="image" />
+            </div>
+
+            <div class="row">
+                <img src="~/Content/Style/goat.jpg" class="image" />
+                <img src="~/Content/Style/pig.jpeg" class="image" />
+            </div>
+        </div>
+    </body>
+}

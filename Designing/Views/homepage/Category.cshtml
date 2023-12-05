@@ -1,0 +1,72 @@
+﻿
+@{
+    ViewBag.Title = "Category";
+}
+
+@using (Html.BeginForm())
+{
+    @Html.AntiForgeryToken()
+
+    <head>
+        <style>
+            body {
+                display: flex;
+                flex-direction: column;
+                align-items: center; /* Center content horizontally */
+                justify-content: center; /* Center content vertically */
+                height: 100vh; /* Make sure the body fills the viewport height */
+                margin: 0;
+            }
+
+            .page-title {
+                font-size: 24px;
+                margin-bottom: 20px;
+            }
+
+            .image-container {
+                display: flex;
+                justify-content: center; /* Center content horizontally */
+                align-items: center; /* Center content vertically */
+            }
+
+                .image-container > div {
+                    display: flex;
+                    flex-direction: column;
+                    align-items: center; /* Center items horizontally within each div */
+                }
+
+                .image-container img {
+                    width: 300px;
+                    height: 300px;
+                    border: 2px solid #333;
+                    border-radius: 10px;
+                    margin: 50px;
+                }
+
+                .image-container p {
+                    text-align: center;
+                }
+        </style>
+    </head>
+    <body style="background-color:lightgreen">
+        <div class="page-title" ; style="background-color:limegreen; text-align: center;">
+            <h1>SELECT CATEGORY</h1>
+        </div>
+
+        <div class="image-container">
+
+            <div>
+                <a href="@Url.Action("homepage", "homepage")" style="text-decoration: none;"><img src="~/Content/Style/PICTURES/crops.jpg" /></a>
+
+                <p><strong>CROPS</strong></p>
+            </div>
+
+            <div>
+                <img src="~/Content/Style/PICTURES/livestock.jpg" />
+                <p><strong>LIVESTOCK</strong></p>
+            </div>
+        </div>
+    </body>
+
+}
+
